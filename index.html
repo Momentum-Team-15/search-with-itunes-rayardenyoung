@@ -9,19 +9,23 @@
 </head>
 
 <body>
-
   <div id="music-player-container">
 
-    <form action="/" method="POST" id="search-form">
-      <div class="input-field">
-        <h1>This is my music player!</h1>
+  
+    <div class="input-container">
+    <form id="search-form" action="/" method="POST">
+        <h1>iTunes Search:</h1>
         <label for="artist-name">Artist Name:</label>
-        <input type="text" name="artist-name-input" id="artist-name-input" placeholder="type here" required />
-      </div>
+        <input id="artist-name-input" type="text" name="artist-name-input" placeholder="type here" required />
+        <button id="search" class="input">search</button>
+        <button id="clear" class="clear-results">clear</button>
     </form>
+    </div>
 
-    <audio controls src="">
-    </audio>
+    <div class="results-container">
+  
+
+    </div>
 
 
 

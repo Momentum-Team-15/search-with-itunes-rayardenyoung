@@ -15,6 +15,7 @@ fetch(url, {
     
     for (let data of myData.results){
         console.log(`${data.trackName} by ${data.artistName}`)
+
         
         let resultsDiv = document.createElement("div");
         let resultsSongPic = document.createElement("img");
