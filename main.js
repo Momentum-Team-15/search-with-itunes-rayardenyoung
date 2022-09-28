@@ -5,7 +5,7 @@ let input = document.getElementById("music-search");
 let form = document.getElementById("form");
 let searchResults = document.getElementById("search-results");
 //let clearButton = document.getElementById('clear');
-
+let resultsPlaySong = document.getElementById("audio");
 
 
 // function clearResults() {
@@ -34,40 +34,48 @@ fetch(url, {
         return response.json()
     })
     .then(function (myData) {
-        searchResults.innerHTML = ""
         buildResults(myData.results);
     })
 })
 
 
-    function buildResults(itunesArray) {
-            for (let data of itunesArray) {
+    function buildResults(musicArray) {
+         searchResults.innerHTML = ("")
+
+         if (musicArray.length === 0) {
+            searchResults.innerText = "No results match your search.";
+
+         } else {
+
+            for (let data of musicArray) {
                 //console.log(`${data.trackName} by ${data.artistName}`)
 
                 let resultsDiv = document.createElement("div");
                 let resultsSongPic = document.createElement("img");
-                let resultsArtistName = document.createElement("h2");
+                let resultsArtistName = document.createElement("h3");
                 let resultsSongName = document.createElement("p");
                 let resultsAlbumName = document.createElement("p");
-                let resultsPlaySong = document.getElementById("audio");
-                // let resultsPreviewSong = document.createElement ("audio");
 
-                resultsSongPic.src = `${data.artworkUrl60}`;
+                resultsSongPic.src = `${data.artworkUrl100}`;
                 resultsArtistName.innerText = `${data.artistName}`;
                 resultsSongName.innerText = `${data.trackName}`;
                 resultsAlbumName.innerText = `${data.collectionName}`;
-                resultsPlaySong.src = `${data.trackViewUrl}`;
-                // resultsPreviewSong.src = `${data.previewUrl}`;
+                
+                resultsDiv.addEventListener("click", (event) => {
+                    // resultsPlaySong.src = ""
+                    resultsPlaySong.src = `${data.previewUrl}`;
+                    resultsPlaySong.volume = 0.1;
+                })
 
                 resultsDiv.appendChild(resultsSongPic);
                 resultsDiv.appendChild(resultsArtistName);
                 resultsDiv.appendChild(resultsSongName);
                 resultsDiv.appendChild(resultsAlbumName);
-                // resultsDiv.appendChild(resultsPlaySong);
-                // customerDiv.appendChild(resultsPreviewSong);
+              
                 searchResults.appendChild(resultsDiv);
 
                 resultsDiv.classList.add("results-div");
             }
-            }
+            }}
     
+            
