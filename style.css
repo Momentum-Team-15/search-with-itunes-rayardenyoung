@@ -1,11 +1,11 @@
-#music-player-container {
+/* #music-player-container {
 border: solid blue 2px;
-}
+} */
 
 .input-field{
 border: solid green 4px;
 }
 
-.results-box{
+.results-div{
     border: solid black 2px;
 }
