@@ -1,4 +1,4 @@
-const musicPlayerContainer = document.querySelector("#music-player-container");
+const musicPlayerContainer = document.querySelector("#header-container");
 
 
 let input = document.getElementById("music-search");
@@ -64,7 +64,7 @@ fetch(url, {
                 resultsDiv.addEventListener("click", (event) => {
                     // resultsPlaySong.src = ""
                     resultsPlaySong.src = `${data.previewUrl}`;
-                    resultsPlaySong.volume = 0.1;
+                    resultsPlaySong.volume = 0.08;
                 })
 
                 resultsDiv.appendChild(resultsSongPic);
