@@ -26,15 +26,15 @@ form.addEventListener("submit", (event) => {
 })
 
 
-function buildResults(musicArray) {
-    searchResults.innerHTML = ("")
+function buildResults(searchArray) {
+    searchResults.innerText = ("")
 
-    if (musicArray.length === 0) {
+    if (searchArray.length === 0) {
         searchResults.innerText = "No results match your search.";
 
     } else {
 
-        for (let data of musicArray) {
+        for (let data of searchArray) {
 
             let resultsDiv = document.createElement("div");
             let resultsSongPic = document.createElement("img");
@@ -71,6 +71,6 @@ function buildResults(musicArray) {
 }
 
 clearButton.addEventListener("click", (event) => {
-    searchResults.innerHTML = [];
+    searchResults.innerText = [];
 })
 
