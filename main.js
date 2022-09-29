@@ -52,13 +52,13 @@ fetch(url, {
 
                 let resultsDiv = document.createElement("div");
                 let resultsSongPic = document.createElement("img");
-                let resultsArtistName = document.createElement("h3");
-                let resultsSongName = document.createElement("p");
+                let resultsSongName = document.createElement("h3");
+                let resultsArtistName = document.createElement("p");
                 let resultsAlbumName = document.createElement("p");
 
                 resultsSongPic.src = `${data.artworkUrl100}`;
-                resultsArtistName.innerText = `${data.artistName}`;
                 resultsSongName.innerText = `${data.trackName}`;
+                resultsArtistName.innerText = `${data.artistName}`;
                 resultsAlbumName.innerText = `${data.collectionName}`;
                 
                 resultsDiv.addEventListener("click", (event) => {
@@ -68,13 +68,18 @@ fetch(url, {
                 })
 
                 resultsDiv.appendChild(resultsSongPic);
-                resultsDiv.appendChild(resultsArtistName);
                 resultsDiv.appendChild(resultsSongName);
+                resultsDiv.appendChild(resultsArtistName);
                 resultsDiv.appendChild(resultsAlbumName);
               
                 searchResults.appendChild(resultsDiv);
 
                 resultsDiv.classList.add("results-div");
+                resultsSongName.classList.add("inside-card");
+                resultsArtistName.classList.add("inside-card");
+                resultsAlbumName.classList.add("inside-card");
+                resultsSongPic.classList.add("inside-card");
+
             }
             }}
     

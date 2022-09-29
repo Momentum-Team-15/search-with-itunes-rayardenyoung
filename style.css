@@ -19,9 +19,10 @@ body {
 }
 
 .results-div {
-    border: #784BA0 solid .5px;
+    border: #784BA0 solid 1.5px;
     padding: 5px;
     margin: 5px;
+    font-size: 15px;
     /* width: min-content; */
     display: flex;
     flex-direction: column;
@@ -30,6 +31,11 @@ body {
     align-items: center;
 
 }
+
+.results-div:hover{
+    background: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+    
+    }
 
 #form {
     box-sizing: border-box;
@@ -70,5 +76,6 @@ width: 50vw;
 
 }
     
-
+.inside-card {
+    margin: 4px;
 }
